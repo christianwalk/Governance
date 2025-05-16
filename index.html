@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crime & Governance | Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --clr-dark: #1b4965;
+      --clr-primary: #5fa8d3;
+      --clr-secondary: #62b6cb;
+      --clr-light: #f5f3f4;
+      --clr-accent: #ffb703;
+      --clr-success: #4ecdc4;
+      --clr-warning: #ffd166;
+      --clr-danger: #ef476f;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      background: var(--clr-light);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      background: linear-gradient(135deg, var(--clr-dark), var(--clr-primary));
+      color: #fff;
+      padding: 60px 20px 80px;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 6px;
+      background: var(--clr-accent);
+      border-radius: 3px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+
+    /* ---------- Layout ---------- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-top: 80px;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--clr-dark);
+    }
+
+    /* ---------- Cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .card h3 {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      color: var(--clr-dark);
+      margin-bottom: 12px;
+    }
+    .card h3 i {
+      margin-right: 8px;
+      color: var(--clr-secondary);
+    }
+    .card ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .card li {
+      margin-bottom: 6px;
+    }
+
+    /* ---------- Badges ---------- */
+    .badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #fff;
+    }
+    .badge.complete {
+      background: var(--clr-success);
+    }
+    .badge.progress {
+      background: var(--clr-warning);
+    }
+    .badge.pending {
+      background: var(--clr-danger);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      margin: 60px 0 30px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Crime &amp; Governance</h1>
+  </header>
+
+  <main class="container">
+    <!-- ---------- Activities ---------- -->
+    <section>
+      <h2>Key Activities</h2>
+      <div class="cards">
+        <!-- Governance, Peace & Security Survey -->
+        <div class="card">
+          <h3><i class="fa-solid fa-scale-balanced"></i>Governance, Peace &amp; Security Survey <span class="badge progress">In&nbsp;Progress</span></h3>
+          <ul>
+            <li>✅ Data collection <strong>complete</strong></li>
+            <li>🔄 Data processing underway – provisional tables out; cleaning continues</li>
+            <li>📝 Report‑writing preparations – funding memos drafted</li>
+            <li>📅 Tentative report‑writing date&nbsp;TBC</li>
+          </ul>
+        </div>
+
+        <!-- Accommodation Survey 2024 -->
+        <div class="card">
+          <h3><i class="fa-solid fa-hotel"></i>Accommodation Survey 2024 <span class="badge progress">Draft&nbsp;Report</span></h3>
+          <ul>
+            <li>✅ Data collection <strong>completed</strong></li>
+            <li>✅ Data processing done for most indicators</li>
+            <li>⚠️ MICE indicators awaiting validation due to data quality</li>
+            <li>📄 Draft report (incl.&nbsp;MICE) available</li>
+          </ul>
+        </div>
+
+        <!-- Crime & Tourism Input -->
+        <div class="card">
+          <h3><i class="fa-solid fa-chart-column"></i>Crime &amp; Tourism – Statistical Abstract <span class="badge progress">Ongoing</span></h3>
+          <ul>
+            <li>📤 Letter for administrative crime data sent to Uganda Police HQ</li>
+            <li>☎️ Follow‑up via email &amp; phone in progress</li>
+            <li>📈 Tourism stats secured; write‑up for <strong>2025 Abstract</strong> underway</li>
+          </ul>
+        </div>
+
+        <!-- Human Rights Data Collection -->
+        <div class="card">
+          <h3><i class="fa-solid fa-handshake-angle"></i>Human Rights Administrative Data <span class="badge pending">Pending</span></h3>
+          <ul>
+            <li>🗓️ Stakeholder meeting (Technical Working Group) planned for January</li>
+            <li>⏸️ Meeting postponed due to competing activities</li>
+            <li>📋 Form Technical Committee</li>
+            <li>📝 Draft Terms of Reference (ToR) for the Committee</li>
+            <li>🗒️ Prepare Concept Note</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Last updated&nbsp;16&nbsp;May&nbsp;2025</footer>
+</body>
+</html>
