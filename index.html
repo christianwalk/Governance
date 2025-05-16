@@ -21,132 +21,36 @@
       --radius: 12px;
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Roboto", sans-serif; background: var(--clr-light); color: #333; line-height: 1.6; }
 
-    body {
-      font-family: "Roboto", sans-serif;
-      background: var(--clr-light);
-      color: #333;
-      line-height: 1.6;
-    }
+    /* Header */
+    header { background: linear-gradient(135deg, var(--clr-dark), var(--clr-primary)); color: #fff; padding: 60px 20px 80px; text-align: center; position: relative; }
+    header::after { content: ""; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 120px; height: 6px; background: var(--clr-accent); border-radius: 3px; }
+    header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0; }
 
-    /* ---------- Header ---------- */
-    header {
-      background: linear-gradient(135deg, var(--clr-dark), var(--clr-primary));
-      color: #fff;
-      padding: 60px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 6px;
-      background: var(--clr-accent);
-      border-radius: 3px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0;
-    }
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    section { margin-top: 80px; }
+    section h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--clr-dark); }
 
-    /* ---------- Layout ---------- */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-top: 80px;
-    }
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: var(--clr-dark);
-    }
+    /* Cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .card { background: #fff; padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); }
+    .card h3 { display: flex; align-items: center; font-size: 1.3rem; color: var(--clr-dark); margin-bottom: 12px; }
+    .card h3 i { margin-right: 8px; color: var(--clr-secondary); }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 6px; }
 
-    /* ---------- Cards ---------- */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: #fff;
-      padding: 24px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-    .card h3 {
-      display: flex;
-      align-items: center;
-      font-size: 1.3rem;
-      color: var(--clr-dark);
-      margin-bottom: 12px;
-    }
-    .card h3 i {
-      margin-right: 8px;
-      color: var(--clr-secondary);
-    }
-    .card ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-    .card li {
-      margin-bottom: 6px;
-    }
+    /* Badges */
+    .badge { display: inline-block; margin-left: 8px; padding: 2px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; color: #fff; }
+    .badge.complete { background: var(--clr-success); }
+    .badge.progress { background: var(--clr-warning); }
+    .badge.pending { background: var(--clr-danger); }
 
-    /* ---------- Badges ---------- */
-    .badge {
-      display: inline-block;
-      margin-left: 8px;
-      padding: 2px 10px;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #fff;
-    }
-    .badge.complete {
-      background: var(--clr-success);
-    }
-    .badge.progress {
-      background: var(--clr-warning);
-    }
-    .badge.pending {
-      background: var(--clr-danger);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      text-align: center;
-      margin: 60px 0 30px;
-      font-size: 0.85rem;
-      color: #555;
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.9rem;
-      }
-    }
+    footer { text-align: center; margin: 60px 0 30px; font-size: 0.85rem; color: #555; }
+    @media (max-width: 600px) { header h1 { font-size: 1.9rem; } }
   </style>
 </head>
 <body>
@@ -155,11 +59,10 @@
   </header>
 
   <main class="container">
-    <!-- ---------- Activities ---------- -->
+    <!-- Activities Section -->
     <section>
       <h2>Key Activities</h2>
       <div class="cards">
-        <!-- Governance, Peace & Security Survey -->
         <div class="card">
           <h3><i class="fa-solid fa-scale-balanced"></i>Governance, Peace &amp; Security Survey <span class="badge progress">In&nbsp;Progress</span></h3>
           <ul>
@@ -170,7 +73,6 @@
           </ul>
         </div>
 
-        <!-- Accommodation Survey 2024 -->
         <div class="card">
           <h3><i class="fa-solid fa-hotel"></i>Accommodation Survey 2024 <span class="badge progress">Draft&nbsp;Report</span></h3>
           <ul>
@@ -181,7 +83,6 @@
           </ul>
         </div>
 
-        <!-- Crime & Tourism Input -->
         <div class="card">
           <h3><i class="fa-solid fa-chart-column"></i>Crime &amp; Tourism – Statistical Abstract <span class="badge progress">Ongoing</span></h3>
           <ul>
@@ -191,7 +92,6 @@
           </ul>
         </div>
 
-        <!-- Human Rights Data Collection -->
         <div class="card">
           <h3><i class="fa-solid fa-handshake-angle"></i>Human Rights Administrative Data <span class="badge pending">Pending</span></h3>
           <ul>
@@ -204,8 +104,30 @@
         </div>
       </div>
     </section>
+
+    <!-- Challenges & Recommendations Section -->
+    <section>
+      <h2>Challenges &amp; Recommendations</h2>
+      <div class="cards">
+        <div class="card">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i>Challenges</h3>
+          <ul>
+            <li>⏳ Delayed response from MDAs on administrative data</li>
+            <li>📆 Too many competing activities affecting unit deadlines</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-solid fa-lightbulb"></i>Recommendations</h3>
+          <ul>
+            <li>🤝 Staff should support Governance when called upon</li>
+            <li>🖋️ Abstract should be signed by the Senior, Principal &amp; Head of Department for ownership</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>Last updated&nbsp;16&nbsp;May&nbsp;2025</footer>
+  <footer>Last updated 16 May 2025</footer>
 </body>
 </html>
